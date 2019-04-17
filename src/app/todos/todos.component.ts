@@ -1,26 +1,18 @@
-import { trigger, transition, style, animate, state} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { fade, changeDivSize, balloonEffect } from '../animations';
 
 // animations: 过一段时间后生效  state：立刻生效
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
-  animations: [
-    trigger('fade', [
-      state('void', style({  opacity: 0 })),
-
-      transition('void => *, * => void', [
-        animate(2000)
-      ]),
-
-   
-    ])
-  ]
+  animations: [ fade, changeDivSize, balloonEffect]
 })
 export class TodosComponent implements OnInit {
 
-  public items = ['create a component', 'implement an animation', 'create a react'];
+  currentState = 'initial';
+  currentBalloonState = 'initial';
+  items: any[] = ['create a component', 'implement an animation', 'create a react'];
   constructor() { }
 
   ngOnInit() {
@@ -37,4 +29,12 @@ export class TodosComponent implements OnInit {
     // console.log(xxx);
   }
 
+  changeState(){
+    this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+  }
+
+
+  changeBalloonState(){
+    this.currentBalloonState = this.currentBalloonState === 'initial' ? 'final' : 'initial';
+  }
 }

@@ -1,0 +1,24 @@
+<h3>Fade in and Fade out Sample</h3>
+
+<button (click)="addItem()">Add List</button>
+<button (click)="removeItem()">Remove List</button>
+
+<div style="width:200px; margin-left: 20px">
+  <ul>
+    <li *ngFor="let list of listItem" [@fade2]>
+      {{list}}
+    </li>
+  </ul>
+
+</div>
+
+<br/>
+<div style="border:5px blue;"></div>
+<div style="width:200px; margin-left: 20px">
+  <ul>
+    <li *ngFor="let list of listItem" [@EnterLeave]="'flyIn'">
+      {{list}}
+    </li>
+  </ul>
+
+</div>

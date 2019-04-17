@@ -3,6 +3,19 @@
 <div *ngIf="items" class="list-group">
   <button type="button" 
     @fade
-    *ngFor="let item of items; let ii = key" (click)="removeItem(ii)"
+    *ngFor="let item of items " (click)="removeItem(item)"
     class="list-group-item">{{item}}</button>
 </div>
+
+<h3>Change div size</h3>
+<button (click)="changeState()">Change Size</button>
+<br />
+<div [@changeDivSize]=currentState class="container col-8" ></div>
+<br />
+
+<h3>Balloon Effect</h3>
+<div (click)="changeBalloonState()"
+ style="width:100px;height:100px;border-radius: 100%;
+  margin:3rem; background-color: green"
+  [@balloonEffect]=currentBalloonState
+  ></div>
