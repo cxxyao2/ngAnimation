@@ -24,7 +24,7 @@ export let changeDivSize = trigger('changeDivSize', [
     ]);
 
 
-export let balloonEffect = trigger('balloonEffect',[
+export let balloonEffect1 = trigger('balloonEffect',[
   state('initial', style({
     backgroundColor: 'green',
     transform: 'scale(1)'

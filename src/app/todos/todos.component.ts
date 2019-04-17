@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { fade, changeDivSize, balloonEffect } from '../animations';
+import { fade, changeDivSize, balloonEffect1 } from '../animations';
 
 // animations: 过一段时间后生效  state：立刻生效
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
-  animations: [ fade, changeDivSize, balloonEffect]
+  animations: [ fade, changeDivSize, balloonEffect1]
 })
 export class TodosComponent implements OnInit {
 
